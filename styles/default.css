@@ -1,0 +1,85 @@
+/* Reglas Generales */
+*{
+    box-sizing: border-box;
+    /*  EXPLICACION:
+        content-box:
+            content-width: width;
+            final-width: width + padding + border;
+        border-box:
+            final-width: width;
+            content-width: width - padding - border;
+    */
+    scroll-behavior: smooth;
+    font-family: 'Raleway', 'Century Gothic', sans-serif;
+}
+/* Margenes */
+body,
+h1,
+h2,
+h3,
+header p,
+.menu{
+    margin: 0;
+}
+/* Rellenos */
+.menu{
+    padding: 0;
+}
+/* Estilos */
+:is(
+    header,
+    nav,
+    footer
+) a{
+    text-decoration: none;
+}
+.menu,
+.example{
+    list-style: none
+}
+/* Navegacion */
+nav{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: .5rem;
+    background: linear-gradient(#36c,#448);
+}
+nav a{
+    color: #ddd;
+}
+nav a:hover{
+    color: #eee;
+    text-shadow: 0 0 .5rem #eee;
+}
+.menu{
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .25s ease;
+}
+.menu.active{
+    max-height: 640px;
+}
+.btn{
+    border-radius: .25rem;
+    border: 1px solid #eee;
+    color: #eee;
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+.btn:hover{
+    color: #448;
+    background-color: #eee;
+}
+.menu-open::before{
+    content: '\2630';
+}
+.menu-close::before{
+    content: '\00D7'
+}
+/* Formularios */

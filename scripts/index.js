@@ -37,5 +37,8 @@ fields.forEach( field => {
             '¿el campo se valido ?: ' + 
             e.target.checkValidity()
         )
+        if (e.target.length < 5){
+            e.target.setCustomValidity('el campo debe contener por los menos 5 caracteres')
+        }
     } )
 } )

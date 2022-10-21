@@ -83,3 +83,26 @@ nav a:hover{
     content: '\00D7'
 }
 /* Formularios */
+.form-control{
+    outline: none;
+    border-radius: .25rem;
+    border: 1.5px solid #333;
+    padding: .25rem .5rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+form label{
+    margin-top: .5rem;
+}
+.form-control:focus{
+    box-shadow: 0 0 .5rem #248;
+}
+.form-control:valid{
+    border-color: #3c6;
+}
+.form-control:not(:placeholder-shown):invalid{
+    border-color: #c33;
+}

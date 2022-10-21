@@ -16,6 +16,7 @@
             <li><a href="#chars">Caracteres</a></li>
             <li><a href="#repeats">Repeticion</a></li>
             <li><a href="#position">Posicion</a></li>
+            <li><a href="#examples">Ejemplos</a></li>
         </ul>
     </nav>
     <!-- Cabecera -->
@@ -24,7 +25,87 @@
         <p>Expresiones Regulares</p>
     </header>
     <!-- Contenido -->
+    <main>
+        <section id="intro">
+            <h2>Introduccion</h2>
+            <p>
+                Una expresion regular corresponde a un patron de busqueda "universal", ya que es admitido por cualquier lenguaje de programacion con sus respectivas variantes, y permite la comparacion de dicho patron con una cadena de texto (string).
+            </p>
+            <p class="example">
+                Para implementarlos, en HTML debemos utilizar el atributo <em>pattern</em> y en JS podemos escribirlo de la siguiente manera <em>/abc/</em> o utilizando el objeto RegExp('abc')
+            </p>
+            <p>
+                Pueden ser literales como por ejemplo <strong>'abc'</strong> donde se indica que la coincidencia debe ser dicha combinacion en cualquier parte de la cadena de texto. Aunque tambien se pueden utilizar algunos caracteres especiales como los que ven mas adelante
+            </p>
+            <ul class="example">
+                <li><strong>(...)</strong> agrupacion de reglas</li>
+                <li><strong>[...]</strong> cualquier coincidencia dentro del corchete</li>
+                <li><strong>|</strong> separador "or" para indicar combinaciones alternativas</li>
+                <li><strong>\</strong> escape de caracter</li>
+            </ul>
+        </section>
+        <section id="chars">
+            <h2>Caracteres Especiales</h2>
+            <p>
+                Como se menciona anteriormente, podemos escapar caracteres que indican algun grupo dentro de la tabla ASCII, es bastante practico si queremos que nuestro patron sea un texto alfanumerico, si queremos que no incluya espacios o sean solamente numeros.
 
+                Entre los caracteres especiales se encuentran los siguientes
+            </p>
+            <ul class="example">
+                <li><strong>\w</strong> valor alfanumerico</li>
+                <li><strong>\W</strong> valor que NO sea alfanumerico</li>
+                <li><strong>\d</strong> digitos</li>
+                <li><strong>\D</strong> valor que NO sea un digito</li>
+                <li><strong>\s</strong> caracteres de espacio</li>
+                <li><strong>\S</strong> caracteres que NO sean espacios</li>
+            </ul>
+        </section>
+        <section id="repeats">
+            <h2>Caracteres de Repeticion</h2>
+            <p>
+                Tambien podemos indicar la cantidad de veces que esperamos que aparezca dicha combinacion de caracteres mediante los caracteres de repeticion, estos pueden ser de tipo numerico o tambien, simbolos que representan una determinada cantidad de veces.
+            </p>
+            <ul class="example">
+                <li><strong>{n}</strong> "n" cantidad de veces</li>
+                <li><strong>{m,M}</strong> como minimo "m" y maximo "M"</li>
+                <li><strong>+</strong> 1 o mas repeticiones</li>
+                <li><strong>*</strong> ninguna, una o mas veces</li>
+            </ul>
+        </section>
+        <section id="position">
+            <h2>Caracteres de Position</h2>
+            <p>
+                Tambien podemos indicar en que parte debe encontrarse dicha expresion, como por ejemplo al principio de todo, al final de la cadena de texto, o al principio o final de una palabra.
+            </p>
+            <ul class="example">
+                <li><strong>^string</strong> al comienzo del string</li>
+                <li><strong>string$</strong> al final del string</li>
+                <li><strong>\b</strong> al princio o al final de una palabra segun su ubicacion</li>
+            </ul>
+        </section>
+        <section id="examples">
+            <h2>Ejemplos</h2>
+            <form action="">
+                <label for="form_alpha">suario letras, numeros y guiones</label>
+                <input 
+                    id="form_alpha"
+                    class="form-control"
+                    type="text"
+                    pattern="^\w{3,20}$"
+                    title="Ingrese entre 3 y 20 caracteres alfanumericos"
+                    maxlength="20"
+                    required>
+                <label for="form_phone">Numero telefonico +(5411)0303-4567</label>
+                <input 
+                    id="form_phone"
+                    class="form-control"
+                    type="tel"
+                    pattern="\+\(\d{2,5}\)(\d{3,6}\-){1,3}\d{4}"
+                    required>
+                <button>ENVIAR</button>
+            </form>
+        </section>
+    </main>
     <!-- Pie de Pagina -->
     <footer>
         <p>&copy;2022 todos los derechos reservado</p>

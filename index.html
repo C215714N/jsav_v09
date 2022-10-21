@@ -29,5 +29,69 @@
     <footer>
         <p>&copy;2022 todos los derechos reservado</p>
     </footer>
+    <script>
+        const d = document;
+        const heading = d.querySelector('h1');
+
+        heading.onclick = function(){
+            console.log('soy el primer click')
+        }
+        heading.onclick = function(){
+            console.log('soy el siguiente click en la lista')
+        }
+        heading.onclick = function(){
+            console.log('soy el ultimo click')
+        }
+        // el Evento onclick en realidad es un atributo (variable) al que le asignamos una funcion como valor.
+        let onClick = 'evento onclick primero';
+            onClick = 'evento onclick segundo';
+            onClick = 'evento onclick tercero';
+        
+            console.log(onClick);
+
+        /* -------------------------------------------*/
+        heading.addEventListener('click', function(){
+            let a = 'click'
+            console.log('soy el primer click')
+        })
+
+        heading.addEventListener('click', function(){
+            let a = 'clicked'
+            console.log('soy el siguiente click en la lista')
+        })
+
+        heading.addEventListener('click', function(){
+            console.log('soy el ultimo click')
+        })
+        // el EventListener es un metodo(funcion) que ejecuta una funcion CALLBACK() cuando se realiza el evento indicado.
+        function mostrar(valor){
+            console.log(valor)
+        }
+        mostrar('escuchador de evento primero');
+        mostrar('escuchador de evento segundo');
+        mostrar('escuchador de evento tercero');
+        /*  Eventos comunes
+            // mouse
+            'click'
+            'mouseover'
+            'mouseout'
+            
+            // campos | hipervinculos
+            'input'
+            'focus'
+            'blur'
+            
+            // elementos arrastables
+            'drag'
+            'dragover'
+            'dragleave'
+            'drop'
+
+            // teclado
+            'keydown'
+            'keypress'
+            'keyup'
+        */
+    </script>
 </body>
 </html>
